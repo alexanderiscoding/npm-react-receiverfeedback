@@ -1,0 +1,28 @@
+{
+  "name": "react-native-receiverfeedback",
+  "version": "1.0.0",
+  "description": "ReceiverFeedback for React Native",
+  "main": "index.jsx",
+  "type": "module",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build-types": "npx -p typescript tsc index.jsx --declaration --allowJs --emitDeclarationOnly",
+    "build": "rollup send.js --file main.cjs --format cjs"
+  },
+  "keywords": [
+    "react-native-component",
+    "react-native",
+    "user-feedback",
+    "in-app-feedback",
+    "swipeable-panel",
+    "support",
+    "feedback"
+  ],
+  "author": "alexanderiscoding",
+  "homepage": "https://docs.alexanderiscoding.com/package/react-native-receiverfeedback",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alexanderiscoding/npm-react-receiverfeedback.git"
+  }
+}
