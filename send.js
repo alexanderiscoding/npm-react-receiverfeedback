@@ -16,16 +16,20 @@ function send(level, text, userAgent) {
       source: ReceiverFeedbackSource,
       version: getVersion()
     })
-  }).catch((error) => {
-    console.log(error);
-  });
+  }).then(
+    (response) => console.log(response.status == 200 ? 'ReceiverFeedback: send ' + level : 'ReceiverFeedback: not send ' + level + ' - status code: ' + response.status)
+  ).catch(
+    (error) => console.log('ReceiverFeedback: Ocorred error in ' + level + ': ' + error)
+  );
 }
 
 function registerFeedback(level, text) {
-  if (typeof ReceiverFeedbackIdentify && typeof ReceiverFeedbackToken && typeof ReceiverFeedbackSource == "string") {
-    getUserAgent().then((userAgent) => {
-      send(level, text, userAgent);
-    });
+  if (Number(ReceiverFeedbackIdentify) && String(ReceiverFeedbackToken) && String(ReceiverFeedbackSource)) {
+    if (level != 0) {
+      getUserAgent().then((userAgent) => {
+        send(level, text, userAgent);
+      });
+    }
   } else {
     console.log("ReceiverFeedbackIdentify and/or ReceiverFeedbackToken and/or ReceiverFeedbackSource not defined in package.json");
   }

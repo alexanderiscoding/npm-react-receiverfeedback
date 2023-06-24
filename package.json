@@ -1,13 +1,13 @@
 {
   "name": "react-native-receiverfeedback",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "ReceiverFeedback for React Native",
   "main": "index.jsx",
   "type": "module",
   "types": "./index.d.ts",
   "scripts": {
-    "build-types": "npx -p typescript tsc index.jsx --declaration --allowJs --emitDeclarationOnly",
-    "build": "rollup send.js --file main.cjs --format cjs"
+    "build": "rollup send.js --file main.cjs --format cjs",
+    "build-types": "npx -p typescript tsc index.jsx --declaration --allowJs --emitDeclarationOnly"
   },
   "keywords": [
     "react-native-component",
